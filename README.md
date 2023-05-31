@@ -19,6 +19,12 @@ Drag & drop UI to build your customized LLM flow using [LangchainJS](https://git
     npx flowise start
     ```
 
+    With username & password
+
+    ```bash
+    npx flowise start --FLOWISE_USERNAME=user --FLOWISE_PASSWORD=1234
+    ```
+
 3. Open [http://localhost:3000](http://localhost:3000)
 
 ## 🐳 Docker
@@ -38,9 +44,11 @@ Drag & drop UI to build your customized LLM flow using [LangchainJS](https://git
     docker build --no-cache -t flowise .
     ```
 2. Run image:
+
     ```bash
     docker run -d --name flowise -p 3000:3000 flowise
     ```
+
 3. Stop image:
     ```bash
     docker stop flowise
@@ -105,22 +113,32 @@ Flowise has 3 different modules in a single mono repository.
 
 ## 🔒 Authentication
 
-To enable app level authentication, add `USERNAME` and `PASSWORD` to the `.env` file in `packages/server`:
+To enable app level authentication, add `FLOWISE_USERNAME` and `FLOWISE_PASSWORD` to the `.env` file in `packages/server`:
 
 ```
-USERNAME=user
-PASSWORD=1234
+FLOWISE_USERNAME=user
+FLOWISE_PASSWORD=1234
 ```
 
 ## 📖 Documentation
 
-Coming soon
-
-## 💻 Cloud Hosted
-
-Coming soon
+[Flowise Docs](https://docs.flowiseai.com/)
 
 ## 🌐 Self Host
+
+### [Railway](https://docs.flowiseai.com/deployment/railway)
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/YK7J0v)
+
+### [Render](https://docs.flowiseai.com/deployment/render)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://docs.flowiseai.com/deployment/render)
+
+### [AWS](https://docs.flowiseai.com/deployment/aws)
+
+### [DigitalOcean](https://docs.flowiseai.com/deployment/digital-ocean)
+
+## 💻 Cloud Hosted
 
 Coming soon
 

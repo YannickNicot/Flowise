@@ -34,7 +34,8 @@ import {
     findAvailableConfigs,
     isSameOverrideConfig,
     replaceAllAPIKeys,
-    isFlowValidForStream
+    isFlowValidForStream,
+    isVectorStoreFaiss
 } from './utils'
 import { cloneDeep } from 'lodash'
 import { getDataSource } from './DataSource'
@@ -83,9 +84,9 @@ export class App {
         // Allow access from *
         this.app.use(cors())
 
-        if (process.env.USERNAME && process.env.PASSWORD) {
-            const username = process.env.USERNAME.toLocaleLowerCase()
-            const password = process.env.PASSWORD.toLocaleLowerCase()
+        if (process.env.FLOWISE_USERNAME && process.env.FLOWISE_PASSWORD) {
+            const username = process.env.FLOWISE_USERNAME
+            const password = process.env.FLOWISE_PASSWORD
             const basicAuthMiddleware = basicAuth({
                 users: { [username]: password }
             })
@@ -633,6 +634,8 @@ export class App {
                 const nodeInstanceFilePath = this.nodesPool.componentNodes[nodeToExecuteData.name].filePath as string
                 const nodeModule = await import(nodeInstanceFilePath)
                 const nodeInstance = new nodeModule.nodeClass()
+
+                isStreamValid = isStreamValid && !isVectorStoreFaiss(nodeToExecuteData)
 
                 const result = isStreamValid
                     ? await nodeInstance.run(nodeToExecuteData, incomingInput.question, {
