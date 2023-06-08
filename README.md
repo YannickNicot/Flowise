@@ -9,6 +9,8 @@ Drag & drop UI to build your customized LLM flow using [LangchainJS](https://git
 
 ## ⚡Quick Start
 
+Download and Install [NodeJS](https://nodejs.org/en/download) >= 18.15.0
+
 1. Install Flowise
     ```bash
     npm install -g flowise
@@ -137,6 +139,8 @@ FLOWISE_PASSWORD=1234
 ### [AWS](https://docs.flowiseai.com/deployment/aws)
 
 ### [DigitalOcean](https://docs.flowiseai.com/deployment/digital-ocean)
+
+### [GCP](https://docs.flowiseai.com/deployment/gcp)
 
 ## 💻 Cloud Hosted
 

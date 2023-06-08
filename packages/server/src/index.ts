@@ -636,7 +636,6 @@ export class App {
                 const nodeInstance = new nodeModule.nodeClass()
 
                 isStreamValid = isStreamValid && !isVectorStoreFaiss(nodeToExecuteData)
-
                 const result = isStreamValid
                     ? await nodeInstance.run(nodeToExecuteData, incomingInput.question, {
                           chatHistory: incomingInput.history,
