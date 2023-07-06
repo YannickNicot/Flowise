@@ -1,10 +1,10 @@
 <!-- markdownlint-disable MD030 -->
 
-# Flowise - LangchainJS UI
+# Flowise - Low-Code LLM apps builder
 
 ![Flowise](https://github.com/FlowiseAI/Flowise/blob/main/images/flowise.gif?raw=true)
 
-Drag & drop UI to build your customized LLM flow using [LangchainJS](https://github.com/hwchase17/langchainjs)
+Drag & drop UI to build your customized LLM flow
 
 ## ⚡Quick Start
 
@@ -28,6 +28,10 @@ To enable app level authentication, add `FLOWISE_USERNAME` and `FLOWISE_PASSWORD
 FLOWISE_USERNAME=user
 FLOWISE_PASSWORD=1234
 ```
+
+## 🔎 Debugging
+
+You can set `DEBUG=true` to the `.env` file. Refer [here](https://docs.flowiseai.com/environment-variables) for full list of env variables
 
 ## 📖 Documentation
 
